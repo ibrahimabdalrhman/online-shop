@@ -21,6 +21,7 @@ exports.getProducts = catchAsync(async (req, res) => {
     });
 });
 exports.getProductsById = catchAsync(async (req, res) => {
+    
     const product = await Product.findById(req.params.id);
 
     if (!product) {
@@ -64,8 +65,7 @@ exports.updateProduct = catchAsync(async (req, res) => {
         },
     });
     
-}
-);
+});
 
 exports.removeProduct = catchAsync(async (req, res) => {
     const product = await Product.findByIdAndRemove(req.params.id);
