@@ -15,4 +15,4 @@ router.route('/:id')
     .patch(productsController.updateProduct)
     .delete(authController.protect,authController.restrictTo('admin'),productsController.removeProduct);
 
-module.exports=router
+module.exports = router
